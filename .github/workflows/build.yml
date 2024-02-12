@@ -25,6 +25,6 @@ jobs:
     - name: changemode
       run: chmod +x scannercli
     - name: scan 
-      run: ./scannercli scan -A e402dbbc239d22a53e28658f9f003899e2aa4a4f -H https://5b5927282b-d.cloud.aquasec.com my-demo-image:${{ github.sha }} --registry my-registry
+      run: ./scannercli scan -A e402dbbc239d22a53e28658f9f003899e2aa4a4f -H https://5b5927282b-d.cloud.aquasec.com my-demo-image:${{ github.sha }}
     - name: Push to Registry
       run: echo "docker push my-registry/my-demo-image:${{ github.sha }}"
