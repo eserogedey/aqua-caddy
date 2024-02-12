@@ -20,7 +20,7 @@ jobs:
 
     - name: Tag image with Registry
       run: docker tag my-demo-image:${{ github.sha }} my-registry/my-demo-image:${{ github.sha }}
-    - name: login1
+    - name: login11
       run: docker login registry.aquasec.com -u ${{ secrets.AQUA_USER }} -p ${{ secrets.AQUA_LOGIN }}
     - name: scan1
       run: docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:latest-saas scan -H https://5b5927282b-d.cloud.aquasec.com -A e402dbbc239d22a53e28658f9f003899e2aa4a4f --local my-demo-image:${{ github.sha }}
